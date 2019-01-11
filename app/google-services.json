@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1092959110364",
+    "firebase_url": "https://walletbus-16cf2.firebaseio.com",
+    "project_id": "walletbus-16cf2",
+    "storage_bucket": "walletbus-16cf2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1092959110364:android:7b0e305956bb243c",
+        "android_client_info": {
+          "package_name": "com.walletbus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1092959110364-v5t77go3e6a61vjc4jirlold69173upc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.walletbus",
+            "certificate_hash": "8c1bc6be7adc92f11a07cacafe8b5c1ad8f09aec"
+          }
+        },
+        {
+          "client_id": "1092959110364-94kcf9n2fsgbo4t7gbp9k0g5ds114sqf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-etcXk8PKXbRRQreLqY_7tUg5wAoDxbo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1092959110364-94kcf9n2fsgbo4t7gbp9k0g5ds114sqf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

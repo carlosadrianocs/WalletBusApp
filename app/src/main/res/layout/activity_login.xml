@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:theme="@style/botaoPadrao"
+        tools:context=".activity.LoginActivity">
+
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:contentDescription="@string/logo"
+            app:srcCompat="@drawable/ic_walletbus" />
+
+        <EditText
+            android:id="@+id/editEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="10dp"
+            android:autofillHints=""
+            android:background="@drawable/bg_edit_text"
+            android:drawableStart="@drawable/ic_email_gray_24dp"
+            android:drawableLeft="@drawable/ic_email_gray_24dp"
+            android:ems="10"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:padding="10dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:textSize="14sp" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hintEnabled="false"
+            app:passwordToggleEnabled="true">
+
+            <EditText
+                android:id="@+id/editSenha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:autofillHints=""
+                android:background="@drawable/bg_edit_text"
+                android:drawableStart="@drawable/ic_lock_gray_24dp"
+                android:drawableLeft="@drawable/ic_lock_gray_24dp"
+                android:ems="10"
+                android:hint="@string/senha"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:textSize="14sp"
+                tools:targetApi="o" />
+
+        </android.support.design.widget.TextInputLayout>
+        <TextView
+            android:id="@+id/textEsqueciSenha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:autoLink="email"
+            android:gravity="center"
+            android:text="@string/esqueci_minha_senha"
+            android:textAppearance="@android:style/TextAppearance.Widget.EditText"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnEntrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="16dp"
+            android:text="@string/entrar"
+            android:textStyle="bold"
+            android:theme="@style/botaoPadrao" />
+
+        <Button
+            android:id="@+id/btnCadastrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="50dp"
+            android:onClick="btnCadastrar"
+            android:padding="16dp"
+            android:text="@string/primeiro_acesso"
+            android:textStyle="bold"
+            android:theme="@style/botaoPadrao" />
+
+    </LinearLayout>
+</ScrollView>
