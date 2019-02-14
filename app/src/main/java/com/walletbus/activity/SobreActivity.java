@@ -14,6 +14,7 @@ public class SobreActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
        // setContentView(R.layout.activity_sobre);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         String desc = "Conheça o WalletBus\n" +
                 "O aplicativo de recarga de trasnposte público.\n" +
@@ -24,8 +25,7 @@ public class SobreActivity extends AppCompatActivity {
                 .setDescription(desc)
                 .addGroup("Fale conosco")
                 .addEmail("walletbus@gmail.com","Envie um e-mail")
-                .addWebsite("walletbus.ga", "Acesse nosso site")
-//                .addGroup("Redes sociais")
+                .addWebsite("walletbus.ga","Acesse nosso site")
                 .create();
 
         setContentView( sobre );

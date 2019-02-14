@@ -17,6 +17,7 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.walletbus.R;
 import com.walletbus.config.ConfiguracaoFirebase;
+import com.walletbus.helper.Base64Custom;
 import com.walletbus.model.Usuario;
 
 public class CadastroActivity extends AppCompatActivity {
@@ -98,6 +99,9 @@ public class CadastroActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
 
+                    String idUsuario = Base64Custom.codificarBase64(usuario.getEmail());
+                    usuario.setIdUsuario( idUsuario);
+                    usuario.salvar();
                    finish();
 
                 } else {

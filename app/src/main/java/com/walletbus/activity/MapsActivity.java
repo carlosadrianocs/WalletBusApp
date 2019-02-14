@@ -42,6 +42,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
+
 //        // Add a marker in Sydney and move the camera
           LatLng TerminalChoama = new LatLng(-2.5193034,-44.2474748);
 //        mMap.addMarker(new MarkerOptions().position(Terminal).title("Terminal de Integração Cohama/Vinhais"));
@@ -49,7 +50,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
           LatLng TerminalCohab = new LatLng(-2.5435542, -44.2170123);
 //        mMap.addMarker(new MarkerOptions().position(TerminalCh).title("Terminal de Integração - Cohab/Cohatrac"));
 //        mMap.moveCamera(CameraUpdateFactory.newLatLng(TerminalCh));
+          LatLng TerminalSc = new LatLng(-2.5696598,-44.2253782);
+          LatLng TerminalPg = new LatLng(-2.5318048,-44.3076583);
 
+        /*Terminal de Integração Cohama/Vinhais*/
         mMap.addMarker(
                 new MarkerOptions()
                 .position(TerminalChoama)
@@ -59,8 +63,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 CameraUpdateFactory.newLatLngZoom(TerminalChoama,14)
         );
-
-
+        /*----------------------------------------------------------*/
+        /*Terminal de Integração - Cohab/Cohatracs*/
         mMap.addMarker(
                 new MarkerOptions()
                         .position(TerminalCohab)
@@ -70,8 +74,30 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 CameraUpdateFactory.newLatLngZoom(TerminalCohab,14)
         );
+        /*----------------------------------------------------------*/
+        /*Terminal de Integração São Cristovão*/
+        mMap.addMarker(
+                new MarkerOptions()
+                        .position(TerminalSc)
+                        .title("Terminal de Integração São Cristovão")
+        );
+        mMap.moveCamera(//2.0 21.0
 
+                CameraUpdateFactory.newLatLngZoom(TerminalCohab,14)
+        );
+        /*----------------------------------------------------------*/
+        /*Terminal de Integração Praia Grande*/
+        mMap.addMarker(
+                new MarkerOptions()
+                        .position(TerminalPg)
+                        .title("Terminal de Integração Praia Grande")
+        );
+        mMap.moveCamera(//2.0 21.0
 
+                CameraUpdateFactory.newLatLngZoom(TerminalCohab,14)
+        );
+
+        /*----------------------------------------------------------*/
 
 
 

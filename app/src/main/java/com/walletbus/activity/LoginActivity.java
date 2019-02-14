@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,7 +28,6 @@ public class LoginActivity extends AppCompatActivity {
 
 
     private FirebaseAuth autenticacaoLogin;
-
     private EditText campoEmail, campoSenha;
     private Button  botaoEntrar;
     private Usuario usuario;
@@ -38,8 +39,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-        verificarUsuarioLogado();
 
         campoEmail = findViewById(R.id.editEmail);
         campoSenha = findViewById(R.id.editSenha);
@@ -75,6 +74,13 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        verificarUsuarioLogado();
 
     }
 
@@ -119,6 +125,7 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this, excecao,Toast.LENGTH_SHORT).show();
 
 
+
                 }
             }
         });
@@ -146,17 +153,18 @@ public void abrirTelaPrincipal(){
 
     public void verificarUsuarioLogado(){
 
+
         autenticacaoLogin = ConfiguracaoFirebase.getFirebaseAutenticacao();
         if (autenticacaoLogin.getCurrentUser() != null){
 
             abrirTelaPrincipalValidado();
-
 
         }
 
     }
     public void abrirTelaPrincipalValidado(){
         startActivity(new Intent(this, MainActivity.class));
+        finish();
 
     }
 //-----------------------------------------------------------------------------------------------------------------//

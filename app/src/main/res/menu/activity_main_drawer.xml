@@ -13,13 +13,14 @@
             android:icon="@drawable/ic_room_gray_24dp"
             android:title="@string/pontos_de_recargas" />
         <item
+            android:id="@+id/nav_saldoCalc"
+            android:icon="@drawable/ic_credit_card_gray_24dp"
+            android:title="Simular Saldo"/>
+
+        <item
             android:id="@+id/nav_historico"
             android:icon="@drawable/ic_poll_gray_24dp"
             android:title="@string/hist_rico" />
-        <!--<item-->
-            <!--android:id="@+id/nav_help"-->
-            <!--android:icon="@drawable/ic_help_gray_24dp"-->
-            <!--android:title="@string/ajuda" />-->
 
         <item
             android:id="@+id/nav_sobre"
