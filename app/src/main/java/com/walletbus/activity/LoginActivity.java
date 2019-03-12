@@ -24,6 +24,8 @@ import com.walletbus.R;
 import com.walletbus.config.ConfiguracaoFirebase;
 import com.walletbus.model.Usuario;
 
+import es.dmoral.toasty.Toasty;
+
 public class LoginActivity extends AppCompatActivity {
 
 
@@ -100,7 +102,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     abrirTelaPrincipal();
 
-                //    Toast.makeText(LoginActivity.this, "Sucesso ao fazer login",Toast.LENGTH_SHORT).show();
+                    Toasty.success(LoginActivity.this, "Sucesso ao fazer login",Toast.LENGTH_SHORT).show();
 
                 }else{
 
@@ -122,7 +124,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
 
 
-                        Toast.makeText(LoginActivity.this, excecao,Toast.LENGTH_SHORT).show();
+                        Toasty.error(LoginActivity.this, excecao,Toast.LENGTH_SHORT).show();
 
 
 

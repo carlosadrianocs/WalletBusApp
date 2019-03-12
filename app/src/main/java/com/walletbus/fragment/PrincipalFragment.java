@@ -4,6 +4,8 @@ package com.walletbus.fragment;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +24,7 @@ import com.walletbus.model.Usuario;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PrincipalFragment extends Fragment{
+public class PrincipalFragment extends Fragment {
 
     private TextView textoSaudacao, textoSaldo;
     private DatabaseReference firebaseRef = ConfiguracaoFirebase.getFirebaseDatabase();
@@ -73,8 +75,8 @@ public class PrincipalFragment extends Fragment{
             }
         });
 
-
     }
+
 
 
 

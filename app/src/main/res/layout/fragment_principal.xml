@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/scroll"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +18,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="240dp"
             android:background="@color/colorPrimary"
             android:gravity="center"
             android:orientation="vertical"
@@ -57,14 +56,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:clipToPadding="false"
             android:gravity="center"
             android:orientation="horizontal">
 
             <android.support.v7.widget.CardView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:layout_margin="20dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
@@ -80,7 +79,7 @@
                     <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
-                        android:padding=" 16dp"
+                        android:padding="16dp"
                         android:src="@drawable/ic_credit" />
 
                     <TextView
@@ -92,7 +91,7 @@
                         android:text="Recarregar Cartão"
                         android:textAllCaps="false"
                         android:textColor="@color/about_description_text_color"
-                        android:textSize="10sp"
+                        android:textSize="12sp"
                         android:typeface="sans" />
 
                 </LinearLayout>
@@ -100,8 +99,8 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:layout_margin="20dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
@@ -130,7 +129,7 @@
                         android:text="Simular Saldo"
                         android:textAllCaps="false"
                         android:textColor="@color/about_description_text_color"
-                        android:textSize="10sp"
+                        android:textSize="12sp"
                         android:typeface="sans" />
 
                 </LinearLayout>
@@ -141,18 +140,18 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
             android:clipToPadding="false"
             android:gravity="center"
             android:orientation="horizontal">
 
             <android.support.v7.widget.CardView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:layout_margin="20dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
-                app:cardCornerRadius="@dimen/about_icon_padding">
+                app:cardCornerRadius="@dimen/about_icon_padding"
+                android:focusable="true">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -165,7 +164,8 @@
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:padding="16dp"
-                        android:src="@drawable/ic_placeholder" />
+                        android:src="@drawable/ic_placeholder"
+                        android:contentDescription="TODO" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -177,7 +177,7 @@
                         android:text="Terminais"
                         android:textAllCaps="false"
                         android:textColor="@color/about_description_text_color"
-                        android:textSize="10sp"
+                        android:textSize="12sp"
                         android:typeface="sans" />
 
                 </LinearLayout>
@@ -185,12 +185,13 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:layout_margin="20dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
-                app:cardCornerRadius="@dimen/about_icon_padding">
+                app:cardCornerRadius="@dimen/about_icon_padding"
+                android:focusable="true">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -215,7 +216,7 @@
                         android:text="Histórico"
                         android:textAllCaps="false"
                         android:textColor="@color/about_description_text_color"
-                        android:textSize="10sp"
+                        android:textSize="12sp"
                         android:typeface="sans" />
 
                 </LinearLayout>

@@ -38,6 +38,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:16.0.4'
     implementation 'com.heinrichreimersoftware:material-intro:1.6.2'
     implementation 'com.github.medyo:android-about-page:1.2.5'
+    implementation 'com.github.GrenderG:Toasty:1.4.0'
 //    implementation 'com.ogaclejapan.smarttablayout:library:1.6.1@aar'
 //
 //    //Optional: see how to use the utility.
