@@ -139,7 +139,6 @@ public class LoginActivity extends AppCompatActivity {
 public void abrirTelaPrincipal(){
     startActivity(new Intent(this, MainActivity.class));
     finish();
-
 }
 
 /*Chamando as activitys Login e cadastro*/
@@ -161,7 +160,6 @@ public void abrirTelaPrincipal(){
             abrirTelaPrincipalValidado();
 
         }
-
     }
     public void abrirTelaPrincipalValidado(){
         startActivity(new Intent(this, MainActivity.class));
