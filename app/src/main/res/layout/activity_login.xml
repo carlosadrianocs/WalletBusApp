@@ -47,7 +47,7 @@
             android:paddingTop="10dp"
             android:paddingRight="10dp"
             android:paddingBottom="10dp"
-            android:textSize="14sp" />
+            android:textSize="14sp" tools:targetApi="o"/>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -72,17 +72,20 @@
                 tools:targetApi="o" />
 
         </android.support.design.widget.TextInputLayout>
+
         <TextView
-            android:id="@+id/textEsqueciSenha"
+            android:id="@+id/btnReset"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:autoLink="email"
-            android:gravity="center"
+            android:gravity="right"
+            android:onClick="btnReset"
             android:text="@string/esqueci_minha_senha"
+            android:textAllCaps="false"
             android:textAppearance="@android:style/TextAppearance.Widget.EditText"
-            android:textColor="@android:color/darker_gray"
-            android:textSize="12sp"
+            android:textColor="@color/about_item_text_color"
+            android:textSize="14sp"
             android:textStyle="bold" />
 
         <Button
@@ -99,7 +102,7 @@
             android:id="@+id/btnCadastrar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="50dp"
             android:onClick="btnCadastrar"
             android:padding="20dp"

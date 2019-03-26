@@ -11,6 +11,8 @@ public class Usuario {
     private String nome;
     private String email;
     private String senha;
+    private Double saldo = 0.00;
+    private int numeroCartao = 12345;
 
     public Usuario() {
 
@@ -22,6 +24,22 @@ public class Usuario {
                .child(this.idUsuario)
                .setValue(this);
 
+    }
+
+    public Double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(Double saldo) {
+        this.saldo = saldo;
+    }
+
+    public int getNumeroCartao() {
+        return numeroCartao;
+    }
+
+    public void setNumeroCartao(int numeroCartao) {
+        this.numeroCartao = numeroCartao;
     }
 
     @Exclude
@@ -56,10 +74,5 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-
-
-
-
-
 
 }

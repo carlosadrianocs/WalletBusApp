@@ -110,19 +110,18 @@ public class MainActivity extends AppCompatActivity
         });
 
 
-
     }
 //----------------------------------------------------------------------------------------------------------------------------//
 
     @Override
     public void onBackPressed() {
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
         }
-
 
     }
     //---------------------Menu--------------------//
@@ -163,14 +162,7 @@ public class MainActivity extends AppCompatActivity
 
 
         } else if (id == R.id.nav_pontos) {
-
-//            PontosFragment  pontosFragment = new PontosFragment();
-//            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-//            fragmentTransaction.replace(R.id.frameContainer, pontosFragment );
-//            fragmentTransaction.commit();
-
             startActivity(new Intent(this, MapsActivity.class));
-
         } else if (id == R.id.nav_historico) {
 
             HitoricoFragment hitoricoFragment = new HitoricoFragment();

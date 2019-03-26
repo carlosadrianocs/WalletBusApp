@@ -48,7 +48,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        mMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+        mMap.clear();
         recuperarLocalizacaoUsuario();
 
 //        // Add a marker in Sydney and move the camera
@@ -71,15 +71,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         //SINDICATO
         LatLng TerminalSi = new LatLng(-2.5333915, -44.2943362);
 
+
+
         /*Terminal de Integração Cohama/Vinhais*/
         mMap.addMarker(
                 new MarkerOptions()
                         .position(TerminalChoama)
                         .title("Terminal de Integração Cohama/Vinhais")
+                        .snippet("Funcionamento: 6h30 às 19h")
         );
         mMap.moveCamera(//2.0 21.0
 
-                CameraUpdateFactory.newLatLngZoom(TerminalChoama, 14)
+                CameraUpdateFactory.newLatLngZoom(TerminalChoama, 18)
         );
         /*----------------------------------------------------------*/
         /*Terminal de Integração - Cohab/Cohatracs*/
@@ -87,11 +90,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 new MarkerOptions()
                         .position(TerminalCohab)
                         .title("Terminal de Integração - Cohab/Cohatrac")
+                        .snippet("Funcionamento: 6h30 às 19h")
 
         );
         mMap.moveCamera(//2.0 21.0
 
-                CameraUpdateFactory.newLatLngZoom(TerminalCohab, 14)
+                CameraUpdateFactory.newLatLngZoom(TerminalCohab, 18)
         );
         /*----------------------------------------------------------*/
         /*Terminal de Integração São Cristovão*/
@@ -100,10 +104,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 new MarkerOptions()
                         .position(TerminalSc)
                         .title("Terminal de Integração São Cristovão")
+                        .snippet("Funcionamento: 6h30 às 19h")
         );
         mMap.moveCamera(//2.0 21.0
 
-                CameraUpdateFactory.newLatLngZoom(TerminalCohab, 14)
+                CameraUpdateFactory.newLatLngZoom(TerminalCohab, 18)
         );
         /*----------------------------------------------------------*/
         /*Terminal de Integração Praia Grande*/
@@ -111,10 +116,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 new MarkerOptions()
                         .position(TerminalPg)
                         .title("Terminal de Integração Praia Grande")
+                        .snippet("Funcionamento: 6h30 às 19h")
         );
         mMap.moveCamera(//2.0 21.0
 
-                CameraUpdateFactory.newLatLngZoom(TerminalCohab, 14)
+                CameraUpdateFactory.newLatLngZoom(TerminalCohab, 18)
         );
 
         /*----------------------------------------------------------*/
@@ -124,10 +130,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 new MarkerOptions()
                         .position(TerminalUe)
                         .title("UEMA - Universidade Estadual do Maranhão")
+                        .snippet("Funcionamento: 19h e 20h ")
         );
         mMap.moveCamera(//2.0 21.0
 
-                CameraUpdateFactory.newLatLngZoom(TerminalCohab, 14)
+                CameraUpdateFactory.newLatLngZoom(TerminalCohab, 18)
         );
 
         /*----------------------------------------------------------*/
@@ -137,10 +144,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 new MarkerOptions()
                         .position(TerminalUf)
                         .title("Universidade Federal do Maranhão")
+                        .snippet("Funcionamento: 19h e 20h ")
         );
         mMap.moveCamera(//2.0 21.0
 
-                CameraUpdateFactory.newLatLngZoom(TerminalCohab, 14)
+                CameraUpdateFactory.newLatLngZoom(TerminalCohab, 18)
         );
 
         /*----------------------------------------------------------*/
@@ -150,12 +158,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 new MarkerOptions()
                         .position(TerminalTi)
                         .title("Terminal de Integração Distrito Industrial, São Luís MA")
-                        .snippet("Funcionamento " +
-                                "9 horas ás 20 horas")
+                        .snippet("Funcionamento: 19h e 19h")
         );
         mMap.moveCamera(//2.0 21.0
 
-                CameraUpdateFactory.newLatLngZoom(TerminalCohab, 14)
+                CameraUpdateFactory.newLatLngZoom(TerminalCohab, 18)
         );
 
         /*----------------------------------------------------------*/
@@ -165,10 +172,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 new MarkerOptions()
                         .position(TerminalCe)
                         .title("Central do Estudante")
+                        .snippet("Funcionamento: 7h às 17h")
         );
         mMap.moveCamera(//2.0 21.0
 
-                CameraUpdateFactory.newLatLngZoom(TerminalCohab, 14)
+                CameraUpdateFactory.newLatLngZoom(TerminalCohab, 18)
         );
 
         /*----------------------------------------------------------*/
@@ -177,10 +185,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 new MarkerOptions()
                         .position(TerminalSi)
                         .title("Sindicato das Empresas de Transportes de Passageiros de São Luis")
+                        .snippet("Funcionamento: 6h30 às 19h")
         );
         mMap.moveCamera(//2.0 21.0
 
-                CameraUpdateFactory.newLatLngZoom(TerminalCohab, 14)
+                CameraUpdateFactory.newLatLngZoom(TerminalCohab, 18)
         );
 
 

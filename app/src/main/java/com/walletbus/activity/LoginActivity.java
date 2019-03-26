@@ -7,8 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
-import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -17,8 +16,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
-import com.google.firebase.auth.FirebaseAuthUserCollisionException;
-import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.walletbus.MainActivity;
 import com.walletbus.R;
 import com.walletbus.config.ConfiguracaoFirebase;
@@ -33,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText campoEmail, campoSenha;
     private Button  botaoEntrar;
     private Usuario usuario;
+    private TextView botaoReset;
     private FirebaseAuth autenticacao;
 
 
@@ -45,6 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         campoEmail = findViewById(R.id.editEmail);
         campoSenha = findViewById(R.id.editSenha);
         botaoEntrar = findViewById(R.id.btnEntrar);
+        botaoReset = findViewById(R.id.btnReset);
 
         botaoEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -169,5 +168,12 @@ public void abrirTelaPrincipal(){
         finish();
 
     }
+
+    public void btnReset(View view){
+            startActivity(new Intent(this, ResertActivity.class));
+    }
+
+
 //-----------------------------------------------------------------------------------------------------------------//
 }
+
