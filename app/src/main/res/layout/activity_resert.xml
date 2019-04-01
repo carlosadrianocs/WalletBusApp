@@ -33,7 +33,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:targetApi="o" />
+        tools:targetApi="o"
+        android:autofillHints="" />
 
     <TextView
         android:id="@+id/textView"
@@ -45,7 +46,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:gravity="center"
-        android:text="Por favor, informe seu e-mail para recuperação de conta:"
+        android:text="@string/por_favor_informe_seu_e_mail_para_recupera_o_de_conta"
         android:textAllCaps="false"
         android:textColor="@color/about_description_text_color"
         android:textSize="20sp"
@@ -68,13 +69,14 @@
         android:layout_marginRight="16dp"
         android:layout_marginBottom="8dp"
         android:padding="20dp"
-        android:text="Enviar"
+        android:text="@string/enviar"
         android:onClick="reset"
         android:textStyle="bold"
         android:theme="@style/botaoPadrao"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editEmailReset" />
+        app:layout_constraintTop_toBottomOf="@+id/editEmailReset"
+        tools:ignore="OnClick" />
 
 </android.support.constraint.ConstraintLayout>

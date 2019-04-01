@@ -42,4 +42,10 @@
     <string name="title_activity_maps">Map</string>
     <string name="sobre">Sobre</string>
     <string name="carregando">Carregando...</string>
+    <string name="recarregar">RECARREGAR</string>
+    <string name="escolha_um_valor">Escolha um Valor</string>
+    <string name="r_00_00">R$ 00.00</string>
+    <string name="ex_16_14_2019">Ex: 16/14/2019</string>
+    <string name="por_favor_informe_seu_e_mail_para_recupera_o_de_conta">Por favor, informe seu e-mail para recuperação de conta:</string>
+    <string name="enviar">Enviar</string>
 </resources>

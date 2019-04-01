@@ -28,7 +28,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <EditText
-                android:id="@+id/editSaldo"
+                android:id="@+id/editSaldoAtual"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
@@ -55,7 +55,7 @@
             android:textColor="@android:color/darker_gray"
             android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/editPass2"
+            app:layout_constraintBottom_toTopOf="@+id/editPassagens"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout"
@@ -74,13 +74,13 @@
             android:textColor="@android:color/darker_gray"
             android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/editPass"
+            app:layout_constraintBottom_toTopOf="@+id/editDias"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editPass2" />
+            app:layout_constraintTop_toBottomOf="@+id/editPassagens" />
 
         <EditText
-            android:id="@+id/editPass"
+            android:id="@+id/editDias"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -97,13 +97,13 @@
             android:maxLength="2"
             android:textColor="?attr/colorPrimary"
             android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintBottom_toTopOf="@+id/button_calcular"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textPassg2" />
 
         <EditText
-            android:id="@+id/editPass2"
+            android:id="@+id/editPassagens"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -126,7 +126,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textPassg" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/button_calcular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -139,13 +139,13 @@
             android:text="Calcular passagens restantes"
             android:textStyle="bold"
             android:theme="@style/botaoPadrao"
-            app:layout_constraintBottom_toTopOf="@+id/simula_Resultado"
+            app:layout_constraintBottom_toTopOf="@+id/resultado_final"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editPass" />
+            app:layout_constraintTop_toBottomOf="@+id/editDias" />
 
         <TextView
-            android:id="@+id/simula_Resultado"
+            android:id="@+id/resultado_final"
             android:layout_width="331dp"
             android:layout_height="79dp"
             android:layout_marginStart="8dp"
@@ -162,43 +162,40 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button" />
+            app:layout_constraintTop_toBottomOf="@+id/button_calcular" />
 
-        <RadioButton
-            android:id="@+id/radioButton6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <RadioGroup
+            android:id="@+id/radioTipo"
+            android:layout_width="220dp"
+            android:layout_height="0dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
-            android:checked="true"
-            android:text="Meia"
-            app:layout_constraintBottom_toTopOf="@+id/button"
-            app:layout_constraintEnd_toStartOf="@+id/radioButton7"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editPass" />
-
-        <RadioButton
-            android:id="@+id/radioButton7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="Inteira"
-            app:layout_constraintBottom_toTopOf="@+id/button"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/button_calcular"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/radioButton6"
-            app:layout_constraintTop_toBottomOf="@+id/editPass" />
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editDias"
+            tools:ignore="MissingConstraints">
+
+            <RadioButton
+                android:id="@+id/radioMeia"
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Meia" />
+
+            <RadioButton
+                android:id="@+id/radioInteira"
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Inteira" />
+        </RadioGroup>
 
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
