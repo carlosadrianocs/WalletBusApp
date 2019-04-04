@@ -25,6 +25,8 @@ import com.walletbus.config.ConfiguracaoFirebase;
 import com.walletbus.helper.Base64Custom;
 import com.walletbus.model.Usuario;
 
+import java.text.DecimalFormat;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -34,6 +36,7 @@ public class PrincipalFragment extends Fragment {
     private CardView botaorecarga, botaoSimular, botaoMaps, botaoHistorico;
     private DatabaseReference firebaseRef = ConfiguracaoFirebase.getFirebaseDatabase();
     private FirebaseAuth autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
+    private Double saldoAtualizado;
 
 
     public PrincipalFragment() {
@@ -48,6 +51,7 @@ public class PrincipalFragment extends Fragment {
         // Inflate the layout for this fragment
         final View rootView = inflater.inflate(R.layout.fragment_principal, container, false);
         textoSaudacao = rootView.findViewById(R.id.textSaudacao);
+        textoSaldo = rootView.findViewById(R.id.textSaldoAtual);
         recuperarDados();
         return rootView;
 
@@ -102,7 +106,7 @@ public class PrincipalFragment extends Fragment {
 
         String emailUsuario = autenticacao.getCurrentUser().getEmail();
         String idUsuario = Base64Custom.codificarBase64(emailUsuario);
-        DatabaseReference usuarioRef = firebaseRef.child("usuarios").child(idUsuario);
+        final DatabaseReference usuarioRef = firebaseRef.child("usuarios").child(idUsuario);
 
         usuarioRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -111,6 +115,13 @@ public class PrincipalFragment extends Fragment {
                 Usuario usuario = dataSnapshot.getValue(Usuario.class);
                 try {
                     textoSaudacao.setText("Olá, " + usuario.getNome());
+                    saldoAtualizado = usuario.getSaldo();
+                    DecimalFormat decimalFormat = new DecimalFormat("0.##");
+                    String resultadoFormatada = decimalFormat.format(saldoAtualizado);
+
+                    //Recuperar saldo atualizado na tela
+                    textoSaldo.setText( resultadoFormatada );
+
 
                 }catch (Exception e){
                     e.printStackTrace();

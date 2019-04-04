@@ -31,15 +31,15 @@
                 android:gravity="center"
                 android:text="Carregando..."
                 android:textColor="@android:color/white"
-                android:textSize="18sp" />
+                android:textSize="20sp" />
 
             <TextView
 
-                android:id="@+id/textSaldo"
+                android:id="@+id/textSaldoAtual"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="R$ 0"
+                android:text="0.00"
                 android:textColor="@android:color/white"
                 android:textSize="30sp" />
 

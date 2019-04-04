@@ -11,7 +11,7 @@ public class Usuario {
     private String nome;
     private String email;
     private String senha;
-    private Double saldo = 0.00;
+    private Double saldo = 10.00;
     private int numeroCartao = 12345;
 
     public Usuario() {
