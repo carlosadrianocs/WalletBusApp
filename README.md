@@ -11,9 +11,9 @@ Este trabalho aborda a usabilidade de um aplicativo de realização de recargas 
 </ul>
 
 <strong><h2>Desenvolvedores</h2></strong>
-<li>Carlos Adriano</li>
-<li>Leonardo Carlos</li>
-<li>Juan Castro</li>
+<li>Carlos Adriano - carlosadryanno@outlook.com</li>
+<li>Leonardo Carlos - leonardocarlos_@live.com</li>
+<li>Juan Castro - jc99ribeiro@gmail.com</li>
 </ul>
 
 
