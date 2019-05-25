@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.WindowManager;
 
-import com.walletbus.MainActivity;
 import com.walletbus.R;
 
 public class SplashActivity extends AppCompatActivity {

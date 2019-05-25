@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCanceledListener;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseNetworkException;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
@@ -81,6 +82,9 @@ public class ResertActivity extends AppCompatActivity {
                             } catch (FirebaseAuthInvalidUserException e) {
 
                                 excecao = "Usuário não está cadastrado!";
+
+                            }catch (FirebaseNetworkException e){
+                                excecao = "Verifique sua conexão";
 
                             } catch (Exception e) {
                                 excecao = "Falhou! Tente novamente: " + e.getMessage();

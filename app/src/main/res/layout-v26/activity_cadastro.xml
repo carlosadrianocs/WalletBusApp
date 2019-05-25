@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.CadastroActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".activity.CadastroActivity"
+        tools:layout_editor_absoluteX="15dp"
+        tools:layout_editor_absoluteY="96dp">
+
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:text="@string/crie_sua_conta_gr_tis"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/editTextNome"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/bg_edit_text"
+            android:ems="10"
+            android:hint="@string/nome"
+            android:inputType="textPersonName"
+            android:padding="10dp"
+            android:textColor="@color/about_text_color"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/editTextCpf"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_edit_text"
+            android:ems="10"
+            android:hint="@string/cpf"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:padding="10dp"
+            android:textColor="@color/about_text_color"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/editTextNumero"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_edit_text"
+            android:ems="10"
+            android:hint="@string/numero_do_cart_o"
+            android:inputType="numberDecimal"
+            android:maxLength="8"
+            android:padding="10dp"
+            android:textColor="@color/about_text_color"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:autofillHints=""
+            android:background="@drawable/bg_edit_text"
+            android:ems="10"
+            android:hint="@string/emailc"
+            android:inputType="textEmailAddress"
+            android:maxLength="50"
+            android:padding="10dp"
+            android:textColor="@color/about_text_color"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/editTextSenha"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_edit_text"
+            android:ems="10"
+            android:hint="@string/senhac"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            android:maxLength="15"
+            android:padding="10dp"
+            android:textColor="@color/about_text_color"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/buttonCadastro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="70dp"
+            android:background="@drawable/custom_btn"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="@string/cadastre_se"
+            android:textColor="#FFFF"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</ScrollView>

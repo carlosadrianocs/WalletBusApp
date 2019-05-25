@@ -45,11 +45,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
     }
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         mMap.clear();
-        recuperarLocalizacaoUsuario();
 
 //        // Add a marker in Sydney and move the camera
         LatLng TerminalChoama = new LatLng(-2.5193034, -44.2474748);
@@ -70,7 +70,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng TerminalCe = new LatLng(-2.5402268, -44.2772221);
         //SINDICATO
         LatLng TerminalSi = new LatLng(-2.5333915, -44.2943362);
-
 
 
         /*Terminal de Integração Cohama/Vinhais*/
@@ -195,7 +194,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     }
 
-    private void recuperarLocalizacaoUsuario(){
+    private void recuperarLocalizacaoUsuario() {
 
 
         //Objeto responsável por gerenciar a localização do usuário
@@ -215,12 +214,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         new MarkerOptions()
                                 .position(localUusuario)
                                 .title("Meu Local")
-                                //
+                        //
 
                 );
                 mMap.moveCamera(//2.0 21.0
 
-                        CameraUpdateFactory.newLatLngZoom(localUusuario, 15)
+                        CameraUpdateFactory.newLatLngZoom(localUusuario, 18)
                 );
 
             }
@@ -248,7 +247,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
          * 4) Location listener (para recebermos as atualizações)
          * */
 
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED ) {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
 
             locatationManager.requestLocationUpdates(
@@ -262,7 +261,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
 
     }
-
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -294,11 +292,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                     );
 
-                    }
-                  }
-
+                }
             }
+
         }
+    }
         private void alertaValidacaoPermissao(){
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Permissões Negadas");
@@ -316,4 +314,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         }
 
+        @Override
+        protected void onStart () {
+            super.onStart();
+            recuperarLocalizacaoUsuario();
+        }
     }

@@ -12,7 +12,9 @@ public class Usuario {
     private String email;
     private String senha;
     private Double saldo = 10.00;
-    private int numeroCartao = 12345;
+    private String categoria = "Estudante";
+    private String numeroCartao;
+    private String cpfUsuario;
 
     public Usuario() {
 
@@ -26,6 +28,15 @@ public class Usuario {
 
     }
 
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
     public Double getSaldo() {
         return saldo;
     }
@@ -34,11 +45,11 @@ public class Usuario {
         this.saldo = saldo;
     }
 
-    public int getNumeroCartao() {
+    public String getNumeroCartao() {
         return numeroCartao;
     }
 
-    public void setNumeroCartao(int numeroCartao) {
+    public void setNumeroCartao(String numeroCartao) {
         this.numeroCartao = numeroCartao;
     }
 
@@ -73,6 +84,14 @@ public class Usuario {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public String getCpfUsuario() {
+        return cpfUsuario;
+    }
+
+    public void setCpfUsuario(String cpfUsuario) {
+        this.cpfUsuario = cpfUsuario;
     }
 
 }

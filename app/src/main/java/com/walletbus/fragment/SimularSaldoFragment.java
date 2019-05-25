@@ -20,25 +20,26 @@ import com.google.firebase.database.DatabaseReference;
 import com.walletbus.R;
 import com.walletbus.config.ConfiguracaoFirebase;
 
+import org.w3c.dom.Text;
+
 /**
  * A simple {@link Fragment} subclass.
  */
 public class SimularSaldoFragment extends Fragment {
 
-    private EditText editPassaegns, editDias, editSaldoAtual;
-    private RadioButton radioMeia, raioInteira;
-    private RadioGroup radioTipo;
-    private Button buttonCalcular;
-    private TextView textViewResutado;
     private DatabaseReference firebaseRef = ConfiguracaoFirebase.getFirebaseDatabase();
     private FirebaseAuth autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
+
+    private EditText editPass;
+    private EditText editQtd;
+    private TextView textResuldado;
+    private Button btnSimular;
 
 
     public SimularSaldoFragment() {
         // Required empty public constructor
 
     }
-
 
 
     @Override
@@ -54,32 +55,19 @@ public class SimularSaldoFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        editSaldoAtual = view.findViewById(R.id.editSaldoAtual);
-        editPassaegns = view.findViewById(R.id.editPassagens);
-        editDias = view.findViewById(R.id.editDias);
-        buttonCalcular = view.findViewById(R.id.button_calcular);
-        radioTipo = view.findViewById(R.id.radioTipo);
-        textViewResutado = view.findViewById(R.id.resultado_final);
+        editPass = view.findViewById(R.id.editPass);
+        editQtd = view.findViewById(R.id.editQtd);
+        textResuldado = view.findViewById(R.id.textResultado);
+        btnSimular = view.findViewById(R.id.btnSimular);
 
-        verificaTipo();
-    }
-
-    public void verificaTipo(){
-        radioTipo.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        btnSimular.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int i) {
-                if (i == R.id.radioMeia){
-                   //
-                }else{
-                   //
-                }
+            public void onClick(View v) {
+
+              textResuldado.setText("Em andamento");
+
             }
         });
-    }
-
-
-    public void simularSaldo(){
-
 
 
     }

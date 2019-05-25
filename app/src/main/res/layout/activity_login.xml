@@ -47,7 +47,11 @@
             android:paddingTop="10dp"
             android:paddingRight="10dp"
             android:paddingBottom="10dp"
-            android:textSize="14sp" tools:targetApi="o"/>
+            android:textAllCaps="false"
+            android:textColor="@color/about_text_color"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:targetApi="o" />
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -68,7 +72,9 @@
                 android:hint="@string/senha"
                 android:inputType="textPassword"
                 android:padding="10dp"
+                android:textColor="@color/about_text_color"
                 android:textSize="14sp"
+                android:textStyle="bold"
                 tools:targetApi="o" />
 
         </android.support.design.widget.TextInputLayout>
@@ -79,7 +85,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:autoLink="email"
-            android:gravity="right"
+            android:gravity="end"
             android:onClick="btnReset"
             android:text="@string/esqueci_minha_senha"
             android:textAllCaps="false"
@@ -93,10 +99,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:padding="20dp"
+            android:padding="16dp"
             android:text="@string/entrar"
             android:textStyle="bold"
-            android:theme="@style/botaoPadrao" />
+            android:textColor="#FFFF"
+            android:background="@drawable/custom_btn" />
 
         <Button
             android:id="@+id/btnCadastrar"
@@ -105,10 +112,11 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="50dp"
             android:onClick="btnCadastrar"
-            android:padding="20dp"
+            android:padding="16dp"
             android:text="@string/primeiro_acesso"
             android:textStyle="bold"
-            android:theme="@style/botaoPadrao" />
+            android:textColor="#FFFF"
+            android:background="@drawable/custom_btn" />
 
     </LinearLayout>
 </ScrollView>

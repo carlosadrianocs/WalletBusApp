@@ -1,93 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.RecargaActivity">
 
-    <Button
-        android:id="@+id/btnrecarregar"
-        android:layout_width="wrap_content"
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:layout_editor_absoluteX="15dp"
+    tools:layout_editor_absoluteY="96dp"
+    tools:context=".activity.RecargaActivity">
+
+    <TextView
+        android:id="@+id/editData"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:padding="20dp"
-        android:text="@string/recarregar"
-        android:textStyle="bold"
-        android:theme="@style/botaoPadrao"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editValorRecarga"
-        android:onClick="recarregarCartao"/>
+        android:ems="10"
+        android:focusable="false"
+        android:gravity="start"
+        android:hint="@string/ex_16_14_2019"
+        android:inputType="date"
+        android:textSize="14sp"
+        android:visibility="invisible"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="126dp" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
+        android:padding="5dp"
         android:text="@string/escolha_um_valor"
-        android:textSize="20sp"
+        android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/editValorRecarga"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editData" />
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="229dp" />
 
     <EditText
         android:id="@+id/editValorRecarga"
-        android:layout_width="232dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@android:color/transparent"
+        android:autofillHints=""
+        android:background="@drawable/bg_edit_text"
         android:ems="10"
-        android:gravity="center"
         android:hint="@string/r_00_00"
         android:inputType="numberDecimal"
-        android:maxLength="6"
+        android:maxLength="10"
+        android:padding="10dp"
         android:textColor="@color/colorPrimary"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnrecarregar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9"
-        android:autofillHints="" />
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="69dp"
+        tools:layout_editor_absoluteY="443dp" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Boleto Bancário" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cartão de Crédito" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnrecarregar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:onClick="recarregarCartao"
+        android:padding="20dp"
+        android:text="@string/recarregar"
+        android:textStyle="bold"
+        android:theme="@style/botaoPadrao"
+        tools:layout_editor_absoluteX="118dp"
+        tools:layout_editor_absoluteY="672dp" />
+
+    <ImageView
+        android:id="@+id/imageValide"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_weight="1"
+        app:srcCompat="@drawable/valide" />
 
     <TextView
-        android:id="@+id/editData"
-        android:layout_width="113dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:gravity="center"
-        android:hint="@string/ex_16_14_2019"
-        android:inputType="date"
-        android:textSize="14sp"
-        android:focusable="false"
-        app:layout_constraintBottom_toTopOf="@+id/textView9"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed"
-        tools:ignore="MissingConstraints" />
-</android.support.constraint.ConstraintLayout>
+        android:padding="10dp"
+        android:text="Após a confirmação do pagamento, valide o crédito em qualquer terminal de recarga, em Ônibus ou em Estabelecimentos Credenciados."
+        android:textColor="@color/about_description_text_color"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+</LinearLayout>
+</ScrollView>

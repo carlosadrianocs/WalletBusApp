@@ -43,9 +43,18 @@
     <string name="sobre">Sobre</string>
     <string name="carregando">Carregando...</string>
     <string name="recarregar">RECARREGAR</string>
-    <string name="escolha_um_valor">Escolha um Valor</string>
+    <string name="escolha_um_valor">DIGITE UM VALOR</string>
     <string name="r_00_00">R$ 00.00</string>
     <string name="ex_16_14_2019">Ex: 16/14/2019</string>
     <string name="por_favor_informe_seu_e_mail_para_recupera_o_de_conta">Por favor, informe seu e-mail para recuperação de conta:</string>
     <string name="enviar">Enviar</string>
+    <string name="categoria">Categoria</string>
+    <string name="valor">valor</string>
+    <string name="data">Data</string>
+    <string name="com_seu_saldo_atual_ainda_restam_5_dias_de_passagens">Com seu saldo atual ainda restam 5 dias de passagens</string>
+    <string name="calcular_passagens_restantes">Simular Saldo</string>
+    <string name="quanto_custa_uma_passagem_para_voc_caso_pague_metade_informe_o_valor">Quanto custa uma passagem para você? Caso pague metade informe o valor.</string>
+    <string name="quantas_passagens_voc_usa_em_m_dia_por_dia">Quantas passagens você usa em média por dia?</string>
+    <string name="ex_2">EX: 2</string>
+    <string name="numero_do_cart_o">Numero do Cartão</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.walletbus;
+package com.walletbus.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,6 +23,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.walletbus.R;
 import com.walletbus.activity.LoginActivity;
 import com.walletbus.activity.MapsActivity;
 import com.walletbus.activity.SobreActivity;
@@ -125,25 +126,6 @@ public class MainActivity extends AppCompatActivity
 
     }
     //---------------------Menu--------------------//
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-
-        getMenuInflater().inflate(R.menu.menu_principal, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        int id = item.getItemId();
-
-        if (id == R.id.menuprincipal) {
-            Toast.makeText(MainActivity.this, "Item Adicionar", Toast.LENGTH_SHORT).show();
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
 
     //--------------------Menu---------------------------//
@@ -157,6 +139,7 @@ public class MainActivity extends AppCompatActivity
 
             PrincipalFragment principalFragment = new PrincipalFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.addToBackStack("pilha");//Colocando o fragment em uma pilha
             fragmentTransaction.replace(R.id.frameContainer, principalFragment );
             fragmentTransaction.commit();
 
@@ -167,6 +150,7 @@ public class MainActivity extends AppCompatActivity
 
             HitoricoFragment hitoricoFragment = new HitoricoFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.addToBackStack("pilha");//Colocando o fragment em uma pilha
             fragmentTransaction.replace(R.id.frameContainer, hitoricoFragment );
             fragmentTransaction.commit();
 
@@ -174,6 +158,7 @@ public class MainActivity extends AppCompatActivity
 
             SimularSaldoFragment simularSaldoFragment = new SimularSaldoFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.addToBackStack("pilha");//Colocando o fragment em uma pilha
             fragmentTransaction.replace(R.id.frameContainer, simularSaldoFragment );
             fragmentTransaction.commit();
 
@@ -196,6 +181,13 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+
+
+    }
 
 
 }

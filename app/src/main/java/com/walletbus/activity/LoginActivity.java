@@ -1,5 +1,6 @@
 package com.walletbus.activity;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -12,15 +13,16 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseNetworkException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
-import com.walletbus.MainActivity;
 import com.walletbus.R;
 import com.walletbus.config.ConfiguracaoFirebase;
 import com.walletbus.model.Usuario;
 
+import dmax.dialog.SpotsDialog;
 import es.dmoral.toasty.Toasty;
 
 public class LoginActivity extends AppCompatActivity {
@@ -32,9 +34,10 @@ public class LoginActivity extends AppCompatActivity {
     private Usuario usuario;
     private TextView botaoReset;
     private FirebaseAuth autenticacao;
+    private AlertDialog dialog;
 
 
-
+    // TODO - onCreate
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,13 +48,14 @@ public class LoginActivity extends AppCompatActivity {
         botaoEntrar = findViewById(R.id.btnEntrar);
         botaoReset = findViewById(R.id.btnReset);
 
+
+        // TODO Validar Campos
         botaoEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 String textoEmail = campoEmail.getText().toString();
                 String textoSenha = campoSenha.getText().toString();
-
 
                 if (!textoEmail.isEmpty()){
 
@@ -86,8 +90,16 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     /*-----------------------VALIDANDO USUARIO --------------------------*/
+    // TODO - Validar Autenticacao
 
  public void validarLogin(){
+     // TODO - Validar Autenticacao
+     dialog = new SpotsDialog.Builder()
+             .setContext(this)
+             .setTheme(R.style.Custom)
+             .setCancelable(false)
+             .build();
+     dialog.show();
 
         autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
         autenticacao.signInWithEmailAndPassword(
@@ -101,10 +113,9 @@ public class LoginActivity extends AppCompatActivity {
 
                     abrirTelaPrincipal();
 
-                    Toasty.success(LoginActivity.this, "Sucesso ao fazer login",Toast.LENGTH_SHORT).show();
-
                 }else{
 
+                    dialog.dismiss();
                     String excecao = "";
 
                     try{
@@ -117,6 +128,8 @@ public class LoginActivity extends AppCompatActivity {
 
                         excecao = "E-mail e senha não correspondem a um usuário cadastrado";
 
+                    }catch (FirebaseNetworkException e){
+                        excecao = "Verifique sua conexão";
                     }catch (Exception e ){
                         excecao = " Erro ao fazer login: " + e.getMessage();
                         e.printStackTrace();
@@ -132,8 +145,6 @@ public class LoginActivity extends AppCompatActivity {
         });
 
  }
-    /*-----------------------VALIDANDO USUARIO --------------------------*/
-
 
     /*-----------------------Activiy principal --------------------------*/
 public void abrirTelaPrincipal(){
@@ -152,7 +163,6 @@ public void abrirTelaPrincipal(){
 
 
     public void verificarUsuarioLogado(){
-
 
         autenticacaoLogin = ConfiguracaoFirebase.getFirebaseAutenticacao();
         if (autenticacaoLogin.getCurrentUser() != null){

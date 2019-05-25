@@ -17,7 +17,7 @@ public class SobreActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         String desc = "Conheça o WalletBus\n" +
-                "O aplicativo de recarga de trasnposte público.\n" +
+                "O aplicativo de recarga de transporte público.\n" +
                 "Chega de filas! Agora ficou mais fácil comprar seu crédito.";
 
         View sobre = new AboutPage(this)

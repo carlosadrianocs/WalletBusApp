@@ -8,11 +8,13 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.firebase.FirebaseNetworkException;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -52,7 +54,7 @@ public class PrincipalFragment extends Fragment {
         final View rootView = inflater.inflate(R.layout.fragment_principal, container, false);
         textoSaudacao = rootView.findViewById(R.id.textSaudacao);
         textoSaldo = rootView.findViewById(R.id.textSaldoAtual);
-        recuperarDados();
+//        recuperarDados(); RECUPERAR DADOS DO USUARIO
         return rootView;
 
 
@@ -122,8 +124,7 @@ public class PrincipalFragment extends Fragment {
                     //Recuperar saldo atualizado na tela
                     textoSaldo.setText( resultadoFormatada );
 
-
-                }catch (Exception e){
+                } catch (Exception e){
                     e.printStackTrace();
                 }
             }
@@ -136,7 +137,12 @@ public class PrincipalFragment extends Fragment {
     }
 
 
+    public void onStart(){
+        super.onStart();
+        recuperarDados();
+        Log.d("Ciclo", "Fragment: Metodo onStart() chamado");
 
+    }
 
 
 

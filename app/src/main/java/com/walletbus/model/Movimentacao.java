@@ -10,6 +10,8 @@ public class Movimentacao {
 
     private String data;
     private double valor;
+    private String categoria = "Estudante";
+
 
     public Movimentacao() {
 
@@ -44,4 +46,14 @@ public class Movimentacao {
     public void setValor(double valor) {
         this.valor = valor;
     }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+
 }
