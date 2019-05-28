@@ -22,6 +22,11 @@ import com.walletbus.helper.Mask;
 import com.walletbus.model.Movimentacao;
 import com.walletbus.model.Usuario;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
+import java.util.Locale;
+
 import es.dmoral.toasty.Toasty;
 
 public class RecargaActivity extends AppCompatActivity {
@@ -51,7 +56,6 @@ public class RecargaActivity extends AppCompatActivity {
         buttonRecarga = findViewById(R.id.btnrecarregar);
 
         //MASCARA
-
         TextWatcher money = Mask.monetario(editValorRecarga);
         editValorRecarga.addTextChangedListener(money);
 

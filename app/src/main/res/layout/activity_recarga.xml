@@ -56,7 +56,7 @@
         android:textColor="@color/colorPrimary"
         android:textSize="20sp"
         tools:layout_editor_absoluteX="69dp"
-        tools:layout_editor_absoluteY="443dp" />
+        tools:layout_editor_absoluteY="443dp"/>
 
     <RadioGroup
         android:layout_width="match_parent"

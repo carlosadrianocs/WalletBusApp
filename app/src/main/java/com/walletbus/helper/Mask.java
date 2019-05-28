@@ -5,6 +5,7 @@ import android.text.TextWatcher;
 import android.widget.EditText;
 
 import java.text.NumberFormat;
+import java.util.Locale;
 
 public abstract class Mask {
     public static String unmask(String s) {
@@ -67,11 +68,13 @@ public abstract class Mask {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(!s.toString().equals(current)){
+                    Locale myLocale = new Locale("pt", "BR");
                     ediTxt.removeTextChangedListener(this);
 
                     String cleanString = s.toString().replaceAll("[R$,.]", "");
 
                     double parsed = Double.parseDouble(cleanString);
+                    //String formatted = NumberFormat.getCurrencyInstance(myLocale).format((parsed / 100));
                     String formatted = NumberFormat.getCurrencyInstance().format((parsed/100));
 
                     current = formatted.replaceAll("[R$]", "");

@@ -28,6 +28,9 @@ import com.walletbus.helper.Base64Custom;
 import com.walletbus.model.Usuario;
 
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -115,11 +118,16 @@ public class PrincipalFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 Usuario usuario = dataSnapshot.getValue(Usuario.class);
+
                 try {
+
+                   // String parteFinal = usuario.getNome().substring(usuario.getNome().lastIndexOf(" 0 ") + 1);
+
                     textoSaudacao.setText("Olá, " + usuario.getNome());
                     saldoAtualizado = usuario.getSaldo();
-                    DecimalFormat decimalFormat = new DecimalFormat("0.##");
-                    String resultadoFormatada = decimalFormat.format(saldoAtualizado);
+
+                    NumberFormat nf = new DecimalFormat ("#,##0.00", new DecimalFormatSymbols(new Locale("pt", "BR")));
+                    String resultadoFormatada = nf.format(saldoAtualizado);
 
                     //Recuperar saldo atualizado na tela
                     textoSaldo.setText( resultadoFormatada );
