@@ -92,7 +92,7 @@ public class RecargaActivity extends AppCompatActivity {
             Toasty.success(RecargaActivity.this,"Recarga efetuada com sucesso!",Toasty.LENGTH_SHORT).show();
             return true;
         }else{
-            Toasty.error(RecargaActivity.this,"Valor não fai preenchido",Toasty.LENGTH_SHORT).show();
+            Toasty.error(RecargaActivity.this,"Valor não foi preenchido",Toasty.LENGTH_SHORT).show();
             return false;
         }
     }

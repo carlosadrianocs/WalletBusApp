@@ -5,15 +5,12 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,9 +21,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.walletbus.R;
 import com.walletbus.config.ConfiguracaoFirebase;
 import com.walletbus.helper.Base64Custom;
+import com.walletbus.helper.Mask;
 import com.walletbus.model.Usuario;
-
-import org.w3c.dom.Text;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -42,7 +38,7 @@ public class SimularSaldoFragment extends Fragment {
     private FirebaseAuth autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
 
     private EditText editPass;
-    private EditText editQtd;
+    private EditText editQtdDia, editQtdPass;
     private TextView textResuldado;
     private Button btnSimular;
     private Double saldoAtual;
@@ -68,12 +64,15 @@ public class SimularSaldoFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         editPass = view.findViewById(R.id.editPass);
-        editQtd = view.findViewById(R.id.editQtd);
+        editQtdDia = view.findViewById(R.id.editQtdDia);
+        editQtdPass = view.findViewById(R.id.editQtdPass);
         textResuldado = view.findViewById(R.id.textResultado);
         btnSimular = view.findViewById(R.id.btnSimular);
 
 
-
+        //TODO-mascara
+        TextWatcher money = Mask.monetario(editPass);
+        editPass.addTextChangedListener(money);
 
 
         String emailUsuario = autenticacao.getCurrentUser().getEmail();
@@ -87,11 +86,11 @@ public class SimularSaldoFragment extends Fragment {
                 Usuario usuario = dataSnapshot.getValue(Usuario.class);
                 saldoAtual = usuario.getSaldo();
 
-                NumberFormat nf = new DecimalFormat ("#,##0.00", new DecimalFormatSymbols(new Locale("pt", "BR")));
+                NumberFormat nf = new DecimalFormat("#,##0.00", new DecimalFormatSymbols(new Locale("pt", "BR")));
                 String resultadoFormatada = nf.format(saldoAtual);
 
                 //Recuperar saldo atualizado na tela
-                textResuldado.setText( resultadoFormatada );
+                textResuldado.setText(resultadoFormatada);
 
             }
 
@@ -101,22 +100,55 @@ public class SimularSaldoFragment extends Fragment {
             }
         });
 
-        btnSimular.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                double passagens = Double.parseDouble(editPass.getText().toString());
-                double quantidade = Double.parseDouble(editQtd.getText().toString());
+            btnSimular.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
-                Double resultado = saldoAtual / passagens;
-                textResuldado.setText("São Aproximadamente " + resultado + " passagens contando todos os dias úteis");
+                    String textoPass = editPass.getText().toString();
+                    String textoQtd = editQtdDia.getText().toString();
+                    String textoQtdPass = editQtdPass.getText().toString();
+
+                    if (!textoPass.isEmpty()) {
+
+                        if (!textoQtd.isEmpty()) {
+
+                            if (!textoQtdPass.isEmpty()) {
+
+                                NumberFormat formatter = new DecimalFormat("#00");
+
+                                double passagens = Double.parseDouble(editPass.getText().toString());
+                                double quantidade = Double.parseDouble(editQtdDia.getText().toString());
+                                double quantidadePass = Double.parseDouble(editQtdPass.getText().toString());
+
+//                        Double resultado = saldoAtual / (passagens * quantidade);
+                                Double resultado = (passagens * quantidade) * quantidadePass;
+                                textResuldado.setText("Será necessário R$ " + formatter.format(resultado) + " reais para atender a demanda de " + textoQtdPass + " dias");
+
+                            } else {
+                                //   Toast.makeText(LoginActivity.this, "Preencha o email!", Toast.LENGTH_SHORT).show();
+                                editQtdPass.setError("Campo não preenchido!");
+
+                            }
+
+
+                        } else {
+                            // Toast.makeText(LoginActivity.this, "Preencha a senha!", Toast.LENGTH_SHORT).show();
+                            editQtdDia.setError("Campo não preenchido!");
+                        }
+
+                    } else {
+                        //   Toast.makeText(LoginActivity.this, "Preencha o email!", Toast.LENGTH_SHORT).show();
+                        editPass.setError("Campo não preenchido!");
+
+                    }
+
+                }
+            });
+
+        }
 
 
 
-            }
-        });
-
-
-    }
 
 }

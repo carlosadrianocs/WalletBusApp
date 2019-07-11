@@ -59,14 +59,15 @@
         tools:layout_editor_absoluteY="443dp"/>
 
     <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="390dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
 
         <RadioButton
             android:id="@+id/radioButton"
-            android:layout_width="wrap_content"
+            android:layout_width="28dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:text="Boleto Bancário" />
@@ -76,7 +77,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Cartão de Crédito" />
+            android:text="Cartão de Crédito / Débito" />
     </RadioGroup>
 
     <Button
